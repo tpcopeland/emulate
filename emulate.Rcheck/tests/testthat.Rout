@@ -1,0 +1,1511 @@
+
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> library(testthat)
+> library(emulate)
+> 
+> test_check("emulate")
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,727
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,727
+Treated obs:   872
+Events:        90
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,727
+  Expanded obs:   8,857
+  Expansion ratio: 3.2x
+  Trials created: 6
+  Treatment arm:  2,335
+  Control arm:    6,522
+  Censored:       0
+  Events:         255
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,806
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,806
+Treated obs:   917
+Events:        69
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,806
+  Expanded obs:   9,168
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,540
+  Control arm:    6,628
+  Censored:       0
+  Events:         210
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  392
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  392
+Treated obs:   110
+Events:        9
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   4
+Max follow-up:   3 periods
+
+Expansion complete:
+  Original obs:   392
+  Expanded obs:   973
+  Expansion ratio: 2.5x
+  Trials created: 4
+  Treatment arm:  224
+  Control arm:    749
+  Censored:       0
+  Events:         28
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  382
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  382
+Treated obs:   77
+Events:        10
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   4
+Max follow-up:   3 periods
+
+Expansion complete:
+  Original obs:   382
+  Expanded obs:   941
+  Expansion ratio: 2.5x
+  Trials created: 4
+  Treatment arm:  158
+  Control arm:    783
+  Censored:       0
+  Events:         22
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,813
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,813
+Treated obs:   1,039
+Events:        81
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,813
+  Expanded obs:   9,177
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,845
+  Control arm:    6,332
+  Censored:       0
+  Events:         287
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,772
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,772
+Treated obs:   894
+Events:        78
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,772
+  Expanded obs:   9,045
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,398
+  Control arm:    6,647
+  Censored:       0
+  Events:         230
+--------------------------------------------------
+               Variable    OR CI_lower CI_upper p_value
+            (Intercept) 0.035    0.023    0.053  0.0000
+         `_emulate_arm` 0.733    0.419    1.282  0.2756
+    `_emulate_followup` 0.832    0.698    0.991  0.0396
+ `_emulate_followup_sq` 1.034    1.000    1.070  0.0507
+       `_emulate_trial` 0.911    0.761    1.089  0.3045
+    `_emulate_trial_sq` 1.014    0.987    1.042  0.3132
+                      x 1.244    1.005    1.539  0.0449
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,856
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,856
+Treated obs:   921
+Events:        56
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,856
+  Expanded obs:   11,611
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,455
+  Control arm:    7,156
+  Censored:       3,317
+  Events:         162
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  1,399
+Individuals:   300
+Period range:  0 - 4
+Eligible obs:  1,399
+Treated obs:   454
+Events:        42
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   5
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   1,399
+  Expanded obs:   5,076
+  Expansion ratio: 3.6x
+  Trials created: 5
+  Treatment arm:  2,037
+  Control arm:    3,039
+  Censored:       1,589
+  Events:         100
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,815
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,815
+Treated obs:   933
+Events:        63
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,815
+  Expanded obs:   11,415
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,449
+  Control arm:    6,966
+  Censored:       3,254
+  Events:         178
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,774
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,774
+Treated obs:   887
+Events:        72
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,774
+  Expanded obs:   11,242
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,289
+  Control arm:    6,953
+  Censored:       3,236
+  Events:         193
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,856
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,856
+Treated obs:   930
+Events:        55
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,856
+  Expanded obs:   11,584
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,416
+  Control arm:    7,168
+  Censored:       3,373
+  Events:         152
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,938
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,938
+Treated obs:   1,638
+Events:        28
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,938
+  Expanded obs:   11,786
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  6,027
+  Control arm:    5,759
+  Censored:       3,522
+  Events:         91
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,938
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,938
+Treated obs:   1,638
+Events:        28
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,938
+  Expanded obs:   11,786
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  6,027
+  Control arm:    5,759
+  Censored:       3,522
+  Events:         91
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,814
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,814
+Treated obs:   910
+Events:        65
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,814
+  Expanded obs:   11,434
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,414
+  Control arm:    7,020
+  Censored:       3,263
+  Events:         177
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,848
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,848
+Treated obs:   1,026
+Events:        60
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,848
+  Expanded obs:   11,543
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,665
+  Control arm:    6,878
+  Censored:       3,337
+  Events:         179
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  388
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  388
+Treated obs:   115
+Events:        10
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   4
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   388
+  Expanded obs:   1,293
+  Expansion ratio: 3.3x
+  Trials created: 4
+  Treatment arm:  516
+  Control arm:    777
+  Censored:       423
+  Events:         27
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,821
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,821
+Treated obs:   991
+Events:        66
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,821
+  Expanded obs:   11,446
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,578
+  Control arm:    6,868
+  Censored:       3,286
+  Events:         191
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  1,431
+Individuals:   300
+Period range:  0 - 4
+Eligible obs:  1,431
+Treated obs:   474
+Events:        38
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   5
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   1,431
+  Expanded obs:   5,218
+  Expansion ratio: 3.6x
+  Trials created: 5
+  Treatment arm:  2,109
+  Control arm:    3,109
+  Censored:       1,611
+  Events:         104
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,829
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,829
+Treated obs:   922
+Events:        72
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,829
+  Expanded obs:   11,419
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,371
+  Control arm:    7,048
+  Censored:       3,322
+  Events:         224
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,824
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,824
+Treated obs:   979
+Events:        67
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,824
+  Expanded obs:   11,420
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,502
+  Control arm:    6,918
+  Censored:       3,336
+  Events:         192
+--------------------------------------------------
+               Variable Estimate    SE CI_lower CI_upper p_value
+            (Intercept)   -3.534 0.207   -3.940   -3.129  0.0000
+         `_emulate_arm`   -0.155 0.312   -0.766    0.456  0.6197
+    `_emulate_followup`    0.003 0.085   -0.164    0.170  0.9725
+ `_emulate_followup_sq`   -0.015 0.026   -0.065    0.036  0.5657
+       `_emulate_trial`   -0.039 0.113   -0.260    0.182  0.7277
+    `_emulate_trial_sq`   -0.005 0.026   -0.055    0.045  0.8351
+                      x    0.191 0.142   -0.086    0.469  0.1770
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,814
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,814
+Treated obs:   955
+Events:        69
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,814
+  Expanded obs:   11,351
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,431
+  Control arm:    6,920
+  Censored:       3,320
+  Events:         207
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  385
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  385
+Treated obs:   85
+Events:        8
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   4
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   385
+  Expanded obs:   1,318
+  Expansion ratio: 3.4x
+  Trials created: 4
+  Treatment arm:  480
+  Control arm:    838
+  Censored:       431
+  Events:         16
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  1,432
+Individuals:   300
+Period range:  0 - 4
+Eligible obs:  1,432
+Treated obs:   422
+Events:        34
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   5
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   1,432
+  Expanded obs:   5,193
+  Expansion ratio: 3.6x
+  Trials created: 5
+  Treatment arm:  1,991
+  Control arm:    3,202
+  Censored:       1,640
+  Events:         84
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,785
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,785
+Treated obs:   941
+Events:        79
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,785
+  Expanded obs:   9,072
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,487
+  Control arm:    6,585
+  Censored:       0
+  Events:         248
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  4,497
+Individuals:   1,000
+Period range:  0 - 5
+Eligible obs:  4,497
+Treated obs:   1,558
+Events:        508
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   4,497
+  Expanded obs:   13,640
+  Expansion ratio: 3.0x
+  Trials created: 6
+  Treatment arm:  4,214
+  Control arm:    9,426
+  Censored:       0
+  Events:         1,489
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  4,497
+Individuals:   1,000
+Period range:  0 - 5
+Eligible obs:  4,497
+Treated obs:   1,558
+Events:        508
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   4,497
+  Expanded obs:   13,640
+  Expansion ratio: 3.0x
+  Trials created: 6
+  Treatment arm:  4,214
+  Control arm:    9,426
+  Censored:       0
+  Events:         1,489
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,791
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,791
+Treated obs:   939
+Events:        78
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,791
+  Expanded obs:   11,214
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,365
+  Control arm:    6,849
+  Censored:       3,287
+  Events:         227
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,794
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,794
+Treated obs:   936
+Events:        81
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,794
+  Expanded obs:   9,091
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,490
+  Control arm:    6,601
+  Censored:       0
+  Events:         270
+--------------------------------------------------
+               Variable    RR CI_lower CI_upper p_value
+            (Intercept) 0.027    0.019    0.038  0.0000
+         `_emulate_arm` 0.977    0.596    1.601  0.9264
+    `_emulate_followup` 1.074    0.954    1.210  0.2366
+ `_emulate_followup_sq` 0.973    0.941    1.006  0.1071
+       `_emulate_trial` 1.061    0.932    1.209  0.3697
+    `_emulate_trial_sq` 0.978    0.949    1.008  0.1445
+                      x 1.711    1.364    2.146  0.0000
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  2,816
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,816
+Treated obs:   984
+Events:        67
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   2,816
+  Expanded obs:   9,223
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  2,693
+  Control arm:    6,530
+  Censored:       0
+  Events:         205
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  384
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  384
+Treated obs:   116
+Events:        10
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   4
+Max follow-up:   3 periods
+
+Expansion complete:
+  Original obs:   384
+  Expanded obs:   950
+  Expansion ratio: 2.5x
+  Trials created: 4
+  Treatment arm:  249
+  Control arm:    701
+  Censored:       0
+  Events:         24
+--------------------------------------------------
+               Variable Estimate    SE CI_lower CI_upper p_value
+            (Intercept)   -3.852 0.868   -5.553   -2.152  0.0000
+         `_emulate_arm`   -0.268 0.684   -1.609    1.073  0.6954
+    `_emulate_followup`    0.122 0.233   -0.335    0.580  0.6001
+ `_emulate_followup_sq`   -0.004 0.024   -0.051    0.043  0.8647
+       `_emulate_trial`   -0.035 0.245   -0.516    0.446  0.8862
+    `_emulate_trial_sq`    0.031 0.023   -0.014    0.076  0.1731
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,819
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,819
+Treated obs:   1,014
+Events:        68
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,819
+  Expanded obs:   11,433
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,613
+  Control arm:    6,820
+  Censored:       3,282
+  Events:         185
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,795
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,795
+Treated obs:   967
+Events:        81
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,795
+  Expanded obs:   11,289
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,505
+  Control arm:    6,784
+  Censored:       3,238
+  Events:         249
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,821
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,821
+Treated obs:   1,009
+Events:        66
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,821
+  Expanded obs:   11,446
+  Expansion ratio: 4.1x
+  Trials created: 6
+  Treatment arm:  4,634
+  Control arm:    6,812
+  Censored:       3,253
+  Events:         189
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,811
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,811
+Treated obs:   1,005
+Events:        70
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,811
+  Expanded obs:   11,237
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,475
+  Control arm:    6,762
+  Censored:       3,368
+  Events:         210
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,797
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,797
+Treated obs:   927
+Events:        75
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,797
+  Expanded obs:   11,323
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,411
+  Control arm:    6,912
+  Censored:       3,237
+  Events:         207
+--------------------------------------------------
+               Variable Estimate    SE CI_lower CI_upper p_value
+            (Intercept)   -3.790 0.378   -4.531   -3.048  0.0000
+         `_emulate_arm`    0.248 0.271   -0.284    0.779  0.3615
+    `_emulate_followup`   -0.027 0.086   -0.196    0.141  0.7502
+ `_emulate_followup_sq`   -0.025 0.029   -0.083    0.032  0.3847
+       `_emulate_trial`   -0.046 0.101   -0.244    0.152  0.6510
+    `_emulate_trial_sq`   -0.015 0.022   -0.059    0.029  0.5025
+            ps_stratum2    0.481 0.449   -0.399    1.362  0.2841
+            ps_stratum3    0.126 0.456   -0.769    1.020  0.7831
+            ps_stratum4    0.431 0.437   -0.425    1.287  0.3237
+            ps_stratum5    0.574 0.436   -0.280    1.427  0.1878
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,794
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,794
+Treated obs:   1,061
+Events:        62
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,794
+  Expanded obs:   11,226
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,678
+  Control arm:    6,548
+  Censored:       3,264
+  Events:         145
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  387
+Individuals:   100
+Period range:  0 - 3
+Eligible obs:  387
+Treated obs:   92
+Events:        10
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   4
+Max follow-up:   3 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   387
+  Expanded obs:   1,310
+  Expansion ratio: 3.4x
+  Trials created: 4
+  Treatment arm:  490
+  Control arm:    820
+  Censored:       422
+  Events:         26
+--------------------------------------------------
+ trial      mean         sd       min      max
+     0 1.0002518 0.07144358 0.8242463 1.249403
+     1 0.9985723 0.06433885 0.8242463 1.249403
+     2 0.9974948 0.05463146 0.8242463 1.249403
+     3 0.9973899 0.04457410 0.8242463 1.249403
+     4 0.9977713 0.03661230 0.8242463 1.249403
+     5 0.9993624 0.03053062 0.8242463 1.249403
+     6 1.0002979 0.02259025 0.8242463 1.249403
+     7 1.0000000 0.00000000 1.0000000 1.000000
+            Variable Estimate    SE CI_lower CI_upper p_value
+         (Intercept)   -2.883 0.169   -3.215   -2.551  0.0000
+      `_emulate_arm`   -0.392 0.236   -0.855    0.071  0.0969
+ `_emulate_followup`   -0.038 0.049   -0.134    0.058  0.4377
+    `_emulate_trial`   -0.044 0.049   -0.139    0.052  0.3693
+                   x    0.396 0.104    0.191    0.600  0.0001
+            Variable    OR CI_lower CI_upper p_value
+         (Intercept) 0.051    0.036    0.073  0.0000
+      `_emulate_arm` 0.465    0.286    0.755  0.0020
+ `_emulate_followup` 0.980    0.884    1.086  0.6988
+    `_emulate_trial` 1.003    0.908    1.107  0.9592
+                   x 1.419    1.152    1.747  0.0010
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,531
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,531
+Treated obs:   5,914
+Events:        356
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,531
+  Expanded obs:   67,704
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  28,919
+  Control arm:    38,785
+  Censored:       17,282
+  Events:         1,168
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,691
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,691
+Treated obs:   6,043
+Events:        351
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,691
+  Expanded obs:   68,482
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  29,326
+  Control arm:    39,156
+  Censored:       17,515
+  Events:         1,249
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,691
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,691
+Treated obs:   6,043
+Events:        351
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,691
+  Expanded obs:   68,482
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  29,326
+  Control arm:    39,156
+  Censored:       17,515
+  Events:         1,249
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  2,782
+Individuals:   500
+Period range:  0 - 5
+Eligible obs:  2,782
+Treated obs:   951
+Events:        78
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   2,782
+  Expanded obs:   11,225
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  4,449
+  Control arm:    6,776
+  Censored:       3,235
+  Events:         214
+--------------------------------------------------
+               Variable Estimate    SE CI_lower CI_upper p_value
+            (Intercept)   -3.285 0.192   -3.662   -2.908  0.0000
+         `_emulate_arm`   -0.315 0.305   -0.912    0.282  0.3016
+    `_emulate_followup`   -0.016 0.087   -0.186    0.155  0.8561
+ `_emulate_followup_sq`   -0.022 0.026   -0.074    0.029  0.3934
+       `_emulate_trial`   -0.086 0.088   -0.257    0.086  0.3287
+    `_emulate_trial_sq`    0.001 0.019   -0.037    0.038  0.9635
+                      x    0.299 0.123    0.057    0.541  0.0153
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  21,953
+Individuals:   3,000
+Period range:  0 - 7
+Eligible obs:  21,953
+Treated obs:   9,121
+Events:        527
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   8
+Max follow-up:   5 periods
+
+Expansion complete:
+  Original obs:   21,953
+  Expanded obs:   88,276
+  Expansion ratio: 4.0x
+  Trials created: 8
+  Treatment arm:  31,162
+  Control arm:    57,114
+  Censored:       0
+  Events:         2,012
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  17,003
+Individuals:   3,000
+Period range:  0 - 7
+Eligible obs:  17,003
+Treated obs:   6,603
+Events:        1,666
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   8
+Max follow-up:   5 periods
+
+Expansion complete:
+  Original obs:   17,003
+  Expanded obs:   62,910
+  Expansion ratio: 3.7x
+  Trials created: 8
+  Treatment arm:  21,671
+  Control arm:    41,239
+  Censored:       0
+  Events:         5,937
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  17,003
+Individuals:   3,000
+Period range:  0 - 7
+Eligible obs:  17,003
+Treated obs:   6,603
+Events:        1,666
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   8
+Max follow-up:   5 periods
+
+Expansion complete:
+  Original obs:   17,003
+  Expanded obs:   62,910
+  Expansion ratio: 3.7x
+  Trials created: 8
+  Treatment arm:  21,671
+  Control arm:    41,239
+  Censored:       0
+  Events:         5,937
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  5,662
+Individuals:   1,000
+Period range:  0 - 5
+Eligible obs:  5,662
+Treated obs:   1,957
+Events:        136
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   5,662
+  Expanded obs:   18,558
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  5,374
+  Control arm:    13,184
+  Censored:       0
+  Events:         450
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  14,586
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,586
+Treated obs:   5,862
+Events:        375
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   8
+Max follow-up:   5 periods
+
+Expansion complete:
+  Original obs:   14,586
+  Expanded obs:   58,610
+  Expansion ratio: 4.0x
+  Trials created: 8
+  Treatment arm:  19,964
+  Control arm:    38,646
+  Censored:       0
+  Events:         1,474
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  14,662
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,662
+Treated obs:   5,816
+Events:        362
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   8
+Max follow-up:   5 periods
+
+Expansion complete:
+  Original obs:   14,662
+  Expanded obs:   58,987
+  Expansion ratio: 4.0x
+  Trials created: 8
+  Treatment arm:  19,706
+  Control arm:    39,281
+  Censored:       0
+  Events:         1,437
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      ITT
+Observations:  5,549
+Individuals:   1,000
+Period range:  0 - 5
+Eligible obs:  5,549
+Treated obs:   1,869
+Events:        164
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        ITT
+Trial periods:   6
+Max follow-up:   4 periods
+
+Expansion complete:
+  Original obs:   5,549
+  Expanded obs:   18,096
+  Expansion ratio: 3.3x
+  Trials created: 6
+  Treatment arm:  5,172
+  Control arm:    12,924
+  Censored:       0
+  Events:         504
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,724
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,724
+Treated obs:   6,092
+Events:        334
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,724
+  Expanded obs:   68,638
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  29,445
+  Control arm:    39,193
+  Censored:       17,618
+  Events:         1,153
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,663
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,663
+Treated obs:   6,004
+Events:        346
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,663
+  Expanded obs:   68,247
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  29,115
+  Control arm:    39,132
+  Censored:       17,599
+  Events:         1,183
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  14,663
+Individuals:   2,000
+Period range:  0 - 7
+Eligible obs:  14,663
+Treated obs:   6,004
+Events:        346
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   8
+Max follow-up:   5 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   14,663
+  Expanded obs:   68,247
+  Expansion ratio: 4.7x
+  Trials created: 8
+  Treatment arm:  29,115
+  Control arm:    39,132
+  Censored:       17,599
+  Events:         1,183
+--------------------------------------------------
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  5,588
+Individuals:   1,000
+Period range:  0 - 5
+Eligible obs:  5,588
+Treated obs:   1,971
+Events:        144
+--------------------------------------------------
+emulate_expand - Sequential Trial Expansion
+--------------------------------------------------
+Estimand:        PP
+Trial periods:   6
+Max follow-up:   4 periods
+Grace period:    0 periods
+
+Expansion complete:
+  Original obs:   5,588
+  Expanded obs:   22,564
+  Expansion ratio: 4.0x
+  Trials created: 6
+  Treatment arm:  9,007
+  Control arm:    13,557
+  Censored:       6,591
+  Events:         388
+--------------------------------------------------
+[ FAIL 0 | WARN 47 | SKIP 58 | PASS 267 ]
+
+══ Skipped tests (58) ══════════════════════════════════════════════════════════
+• On CRAN (58): 'test-crossval-stata.R:45:3', 'test-crossval-stata.R:74:3',
+  'test-crossval-stata.R:104:3', 'test-crossval-stata.R:136:3',
+  'test-crossval-stata.R:170:3', 'test-integration.R:2:3',
+  'test-integration.R:45:3', 'test-v01-trialemulation.R:19:3',
+  'test-v01-trialemulation.R:60:3', 'test-v01-trialemulation.R:87:3',
+  'test-v01-trialemulation.R:136:3', 'test-v01-trialemulation.R:182:3',
+  'test-v01-trialemulation.R:219:3', 'test-v01-trialemulation.R:261:3',
+  'test-v02-nhefs.R:70:3', 'test-v02-nhefs.R:103:3', 'test-v02-nhefs.R:152:3',
+  'test-v02-nhefs.R:199:3', 'test-v03-ccw.R:4:3', 'test-v03-ccw.R:20:3',
+  'test-v03-ccw.R:41:3', 'test-v03-ccw.R:60:3', 'test-v03-ccw.R:85:3',
+  'test-v04-gformula.R:4:3', 'test-v04-gformula.R:24:3',
+  'test-v04-gformula.R:46:3', 'test-v04-gformula.R:77:3',
+  'test-v04-gformula.R:95:3', 'test-v05-known-dgp.R:69:3',
+  'test-v06-null-repro.R:47:3', 'test-v07-ipcw.R:4:3', 'test-v07-ipcw.R:25:3',
+  'test-v07-ipcw.R:48:3', 'test-v07-ipcw.R:92:3', 'test-v07-ipcw.R:112:3',
+  'test-v08-grace.R:4:3', 'test-v08-grace.R:18:3', 'test-v08-grace.R:43:3',
+  'test-v08-grace.R:71:3', 'test-v08-grace.R:110:3', 'test-v08-grace.R:145:3',
+  'test-v10-at-estimand.R:4:3', 'test-v10-at-estimand.R:22:3',
+  'test-v10-at-estimand.R:44:3', 'test-v10-at-estimand.R:64:3',
+  'test-v10-at-estimand.R:92:3', 'test-v10-at-estimand.R:111:3',
+  'test-v11-rct-bench.R:4:3', 'test-v11-rct-bench.R:23:3',
+  'test-v11-rct-bench.R:62:3', 'test-v12-sensitivity.R:65:3',
+  'test-v12-sensitivity.R:83:3', 'test-v13-cox.R:4:3', 'test-v13-cox.R:22:3',
+  'test-v13-cox.R:41:3', 'test-v13-cox.R:75:3', 'test-v13-cox.R:93:3',
+  'test-v13-cox.R:113:3'
+
+[ FAIL 0 | WARN 47 | SKIP 58 | PASS 267 ]
+> 
+> proc.time()
+   user  system elapsed 
+393.986   2.188 321.882 

@@ -6,7 +6,7 @@
     GNU Fortran (Ubuntu 13.2.0-23ubuntu3) 13.2.0
 * running under: Ubuntu 24.04.4 LTS
 * using session charset: UTF-8
-* using options ‘--no-tests --no-manual’
+* using option ‘--no-manual’
 * checking for file ‘emulate/DESCRIPTION’ ... OK
 * this is package ‘emulate’ version ‘0.2.0’
 * package encoding: UTF-8
@@ -55,7 +55,8 @@ See sections ‘The INDEX file’ and ‘Package subdirectories’ in the
 * checking files in ‘vignettes’ ... OK
 * checking examples ... OK
 * checking for unstated dependencies in ‘tests’ ... OK
-* checking tests ... SKIPPED
+* checking tests ... OK
+  Running ‘testthat.R’
 * checking for unstated dependencies in vignettes ... OK
 * checking package vignettes in ‘inst/doc’ ... OK
 * checking running R code from vignettes ... OK

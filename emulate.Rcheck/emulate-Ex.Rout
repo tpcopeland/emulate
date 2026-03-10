@@ -299,7 +299,7 @@ Analysis plan             Sequential trials, IPTW, pooled logistic regression
 > cleanEx()
 > options(digits = 7L)
 > base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
-Time elapsed:  1.772 0.14 1.914 0 0 
+Time elapsed:  1.113 0.086 1.191 0 0 
 > grDevices::dev.off()
 null device 
           1 

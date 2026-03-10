@@ -1,0 +1,311 @@
+
+R version 4.3.3 (2024-02-29) -- "Angel Food Cake"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "emulate"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('emulate')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("emulate_diagnose")
+> ### * emulate_diagnose
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_diagnose
+> ### Title: Weight diagnostics and covariate balance assessment
+> ### Aliases: emulate_diagnose
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_expand")
+> ### * emulate_expand
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_expand
+> ### Title: Expand person-period data into sequential emulated trials
+> ### Aliases: emulate_expand
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_fit")
+> ### * emulate_fit
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_fit
+> ### Title: Fit outcome model for target trial emulation
+> ### Aliases: emulate_fit
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_plot")
+> ### * emulate_plot
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_plot
+> ### Title: Plot results from target trial emulation
+> ### Aliases: emulate_plot
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_predict")
+> ### * emulate_predict
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_predict
+> ### Title: Marginal predictions with Monte Carlo confidence intervals
+> ### Aliases: emulate_predict
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_prepare")
+> ### * emulate_prepare
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_prepare
+> ### Title: Prepare data for target trial emulation
+> ### Aliases: emulate_prepare
+> 
+> ### ** Examples
+> 
+> # Create a small person-period dataset
+> set.seed(42)
+> n_ids <- 20
+> n_periods <- 8
+> dat <- data.frame(
++   id = rep(seq_len(n_ids), each = n_periods),
++   period = rep(0:(n_periods - 1), times = n_ids),
++   treatment = 0L,
++   outcome = 0L,
++   eligible = 1L,
++   age = rep(sample(40:70, n_ids, replace = TRUE), each = n_periods),
++   sex = rep(sample(0:1, n_ids, replace = TRUE), each = n_periods)
++ )
+> # Simulate some treatment initiation
+> dat$treatment <- ifelse(dat$period >= sample(2:6, nrow(dat), replace = TRUE), 1L, 0L)
+> # Simulate a few events
+> dat$outcome[sample(which(dat$period > 3), 5)] <- 1L
+> 
+> # Prepare the data for a per-protocol analysis
+> obj <- emulate_prepare(
++   data = dat,
++   id = "id",
++   period = "period",
++   treatment = "treatment",
++   outcome = "outcome",
++   eligible = "eligible",
++   covariates = "age",
++   baseline_covariates = "sex",
++   estimand = "PP"
++ )
+emulate_prepare - Data Preparation
+--------------------------------------------------
+Estimand:      PP
+Observations:  160
+Individuals:   20
+Period range:  0 - 7
+Eligible obs:  160
+Treated obs:   78
+Events:        5
+--------------------------------------------------
+> print(obj)
+Target Trial Emulation Object
+-------------------------------------------------- 
+Estimand:     PP 
+ID:           id 
+Period:       period 
+Treatment:    treatment 
+Outcome:      outcome 
+Pipeline:     prepared 
+Observations: 160 
+Individuals:  20 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_protocol")
+> ### * emulate_protocol
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_protocol
+> ### Title: Generate a target trial protocol table
+> ### Aliases: emulate_protocol
+> 
+> ### ** Examples
+> 
+> # Define and display a protocol for a statin trial emulation
+> protocol <- emulate_protocol(
++   eligibility     = "Adults 40-80, newly diagnosed hyperlipidemia, no prior CVD",
++   treatment       = "Initiate statin within 6 months vs. no statin",
++   assignment      = "Observational: assigned by physician prescribing decision",
++   followup_start  = "Date of first eligible visit",
++   outcome         = "Composite of MI, stroke, or CV death",
++   causal_contrast = "Per-protocol effect on 5-year risk",
++   analysis        = "Sequential trials, IPTW, pooled logistic regression"
++ )
+Target Trial Protocol
+======================================================================
+Eligibility criteria      Adults 40-80, newly diagnosed hyperlipidemia, no prior CVD
+Treatment strategies      Initiate statin within 6 months vs. no statin
+Treatment assignment      Observational: assigned by physician prescribing decision
+Start of follow-up        Date of first eligible visit
+Outcome                   Composite of MI, stroke, or CV death
+Causal contrast           Per-protocol effect on 5-year risk
+Analysis plan             Sequential trials, IPTW, pooled logistic regression
+======================================================================
+> 
+> # The result is a data.frame
+> str(protocol)
+'data.frame':	7 obs. of  2 variables:
+ $ Component    : chr  "Eligibility criteria" "Treatment strategies" "Treatment assignment" "Start of follow-up" ...
+ $ Specification: chr  "Adults 40-80, newly diagnosed hyperlipidemia, no prior CVD" "Initiate statin within 6 months vs. no statin" "Observational: assigned by physician prescribing decision" "Date of first eligible visit" ...
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_report")
+> ### * emulate_report
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_report
+> ### Title: Publication-quality results table
+> ### Aliases: emulate_report
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_validate")
+> ### * emulate_validate
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_validate
+> ### Title: Validate prepared data for target trial emulation
+> ### Aliases: emulate_validate
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("emulate_weight")
+> ### * emulate_weight
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: emulate_weight
+> ### Title: Compute inverse probability weights for target trial emulation
+> ### Aliases: emulate_weight
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("print.emulate")
+> ### * print.emulate
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: print.emulate
+> ### Title: Print method for emulate objects
+> ### Aliases: print.emulate
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> cleanEx()
+> nameEx("summary.emulate")
+> ### * summary.emulate
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: summary.emulate
+> ### Title: Summary method for emulate objects
+> ### Aliases: summary.emulate
+> 
+> ### ** Examples
+> 
+> 
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> cleanEx()
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  1.772 0.14 1.914 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

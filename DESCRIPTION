@@ -1,6 +1,7 @@
 Package: emulate
 Title: Target Trial Emulation via Sequential Trials
-Version: 0.1.1
+Version: 0.2.0
+Date: 2026-03-10
 Authors@R: person("Timothy P", "Copeland", role = c("aut", "cre"),
                    email = "timothy.copeland@ki.se")
 Author: Timothy P Copeland [aut, cre]
@@ -22,11 +23,14 @@ Imports:
     sandwich,
     MASS,
     ggplot2,
+    glmnet,
+    MatchIt,
     stats
 VignetteBuilder: knitr
 Suggests:
     testthat (>= 3.0.0),
     openxlsx,
+    EmpiricalCalibration,
     knitr,
     rmarkdown
 Config/testthat/edition: 3

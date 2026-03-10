@@ -1,0 +1,25 @@
+emulate-package         emulate: Target Trial Emulation via Sequential
+                        Trials
+emulate_calibrate       Negative control calibration for target trial
+                        emulation
+emulate_diagnose        Weight diagnostics and covariate balance
+                        assessment
+emulate_expand          Expand person-period data into sequential
+                        emulated trials
+emulate_fit             Fit outcome model for target trial emulation
+emulate_match           Propensity score matching for target trial
+                        emulation
+emulate_plot            Plot results from target trial emulation
+emulate_predict         Marginal predictions with Monte Carlo
+                        confidence intervals
+emulate_prepare         Prepare data for target trial emulation
+emulate_protocol        Generate a target trial protocol table
+emulate_report          Publication-quality results table
+emulate_stratify        Propensity score stratification for target
+                        trial emulation
+emulate_validate        Validate prepared data for target trial
+                        emulation
+emulate_weight          Compute inverse probability weights for target
+                        trial emulation
+print.emulate           Print method for emulate objects
+summary.emulate         Summary method for emulate objects

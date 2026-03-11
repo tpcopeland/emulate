@@ -5,3 +5,4 @@
 ^emulate.*\.tar\.gz$
 ^demo$
 ^VALIDATION_REPORT\.md$
+^qa$

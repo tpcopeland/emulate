@@ -369,6 +369,17 @@ emulate_fit <- function(obj, outcome_cov = NULL, model = "logistic",
   # Treatment effect — coefficient names may be backtick-quoted
   model_var_coef <- bq(model_var)
   b_treat <- coef(fit)[model_var_coef]
+  if (is.na(b_treat)) {
+    stop("Treatment variable '", model_var, "' was dropped from the model ",
+         "(coefficient is NA). This typically means the treatment variable is ",
+         "collinear with other predictors, or all observations have the same ",
+         "treatment value. Check the expanded data.", call. = FALSE)
+  }
+  if (!model_var_coef %in% rownames(vcov_cl)) {
+    stop("Treatment variable '", model_var, "' not found in the variance matrix. ",
+         "The coefficient may have been aliased (dropped due to collinearity).",
+         call. = FALSE)
+  }
   se_treat <- sqrt(vcov_cl[model_var_coef, model_var_coef])
   z <- b_treat / se_treat
   p_val <- 2 * pnorm(-abs(z))

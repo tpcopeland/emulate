@@ -24,6 +24,8 @@
                           fu_ns_info, tr_ns_info) {
   # Strip backticks from coefficient names so lookups match unquoted variable names
   names(b_vec) <- gsub("^`|`$", "", names(b_vec))
+  # Replace NA coefficients (dropped by GLM due to collinearity) with 0
+  b_vec[is.na(b_vec)] <- 0
   coef_names <- names(b_vec)
   n <- nrow(ref_data)
   xb <- rep(0, n)
@@ -106,8 +108,10 @@
 #' Compute percentile matching Stata's ceiling-index method
 #' @keywords internal
 .emulate_pctile <- function(x, pct) {
-  x <- sort(x)
+  x <- x[!is.na(x)]
   n <- length(x)
+  if (n == 0L) return(NA_real_)
+  x <- sort(x)
   idx <- max(1L, ceiling(n * pct / 100))
   idx <- min(idx, n)
   x[idx]

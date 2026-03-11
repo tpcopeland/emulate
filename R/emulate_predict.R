@@ -191,9 +191,24 @@ emulate_predict <- function(obj, times, type = "cum_inc", samples = 100L,
   # One row per id-trial
   ref <- ref[, .SD[1], by = c(id_col, trial_col)]
 
+  if (nrow(ref) == 0L) {
+    stop("Reference population is empty (no observations at followup=0 in estimation sample).",
+         call. = FALSE)
+  }
+
   times <- sort(as.integer(times))
   n_times <- length(times)
   last_time <- max(times)
+
+  # Validate times against max follow-up in data
+  max_fu <- max(dt[[fu_col]], na.rm = TRUE)
+  if (last_time > max_fu) {
+    bad_times <- times[times > max_fu]
+    warning("Requested times exceed max follow-up in data (", max_fu, "): ",
+            paste(bad_times, collapse = ", "), ". ",
+            "Predictions beyond observed data may be unreliable.",
+            call. = FALSE)
+  }
 
   # CI percentiles
   alpha <- (100 - level) / 2
@@ -234,7 +249,14 @@ emulate_predict <- function(obj, times, type = "cum_inc", samples = 100L,
   mc_1 <- matrix(NA_real_, nrow = samples, ncol = n_times)
 
   # Cholesky decomposition
-  # Handle dropped coefficients (zero variance)
+  # Handle dropped coefficients (NA or zero variance)
+  na_idx <- which(is.na(b_hat))
+  if (length(na_idx) > 0) {
+    b_hat[na_idx] <- 0
+    diag(V_hat)[na_idx] <- 0
+    V_hat[na_idx, ] <- 0
+    V_hat[, na_idx] <- 0
+  }
   keep_idx <- which(diag(V_hat) > 0)
   n_keep <- length(keep_idx)
   chol_ok <- TRUE

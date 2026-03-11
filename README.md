@@ -1,6 +1,10 @@
 # emulate: Target Trial Emulation via Sequential Trials
 
-**Version 0.1.1** | **License: MIT** | **Author: Timothy P. Copeland**
+<!-- badges: start -->
+[![R](https://img.shields.io/badge/R-%E2%89%A5%204.0.0-blue)](https://www.r-project.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![Version](https://img.shields.io/badge/version-0.2.0-orange.svg)]()
+<!-- badges: end -->
 
 An R implementation of the sequential trials framework for target trial
 emulation from observational data. Produces numerically equivalent results
@@ -72,7 +76,7 @@ would have obtained from the target trial, with valid confidence intervals.
 install.packages("devtools")
 
 # Install emulate from GitHub
-devtools::install_github("tpcopeland/Stata-Tools", subdir = "emulate")
+devtools::install_github("tpcopeland/emulate")
 ```
 
 ### From a local source

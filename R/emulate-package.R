@@ -91,9 +91,9 @@
 #' @importFrom MASS mvrnorm
 #' @importFrom ggplot2 ggplot aes geom_line geom_ribbon geom_point
 #'   geom_vline geom_hline geom_segment geom_density geom_step
-#'   labs theme_minimal scale_color_manual scale_shape_manual
-#'   scale_linetype_manual scale_y_continuous facet_wrap coord_flip
-#'   element_text theme
+#'   labs theme_minimal scale_color_manual scale_fill_manual
+#'   scale_shape_manual scale_linetype_manual scale_y_continuous
+#'   facet_wrap coord_flip element_text theme
 "_PACKAGE"
 
 NULL
@@ -115,5 +115,6 @@ utils::globalVariables(c(
   "..time_enter", "..time_exit", "N", "pdiff", "cum_out", "prior_out",
   "prev_treat", "prior_out2", "bl_treat",
   # Phase 1+: PS trimming, matching, stratification, equipoise
-  ".ps_trim_val", ".ps_match", "ps_stratum", "preference", "ps"
+  ".ps_trim_val", ".ps_match", "ps_stratum", "preference", "ps",
+  "fifelse"
 ))

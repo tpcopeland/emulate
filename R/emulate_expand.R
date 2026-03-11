@@ -184,6 +184,7 @@ emulate_expand <- function(obj, trials = NULL, maxfollowup = 0L, grace = 0L) {
   # Process each trial period
   trial_list <- list()
   trial_count <- 0L
+  used_trial_periods <- integer(0)
 
   fu_col <- paste0(prefix, "followup")
   trial_col <- paste0(prefix, "trial")
@@ -197,6 +198,7 @@ emulate_expand <- function(obj, trials = NULL, maxfollowup = 0L, grace = 0L) {
     if (length(elig_at_t) == 0) next
 
     trial_count <- trial_count + 1L
+    used_trial_periods <- c(used_trial_periods, t)
 
     # Keep obs for eligible IDs from period t onward
     trial_dt <- dt[get(id_col) %in% elig_at_t & get(period_col) >= t]
@@ -298,7 +300,7 @@ emulate_expand <- function(obj, trials = NULL, maxfollowup = 0L, grace = 0L) {
   obj$state$expanded <- TRUE
   obj$expansion <- list(
     n_trials = trial_count,
-    trial_periods = trial_periods[seq_len(trial_count)],
+    trial_periods = used_trial_periods,
     n_expanded = n_expanded,
     n_treat = n_treat,
     n_control = n_control,

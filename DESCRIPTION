@@ -25,7 +25,8 @@ Imports:
     ggplot2,
     glmnet,
     MatchIt,
-    stats
+    stats,
+    utils
 VignetteBuilder: knitr
 Suggests:
     testthat (>= 3.0.0),

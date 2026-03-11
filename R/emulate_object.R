@@ -162,7 +162,7 @@ print.emulate <- function(x, ...) {
 #'
 #' @export
 summary.emulate <- function(object, ...) {
-  print.emulate(object)
+  print(object)
 
   if (object$state$weighted) {
     cat("\nWeight Summary:\n")

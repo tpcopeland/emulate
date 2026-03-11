@@ -171,6 +171,9 @@ emulate_plot <- function(obj, type = "cumhaz", ci = TRUE, title = NULL) {
   p <- p +
     ggplot2::scale_color_manual(values = c("navy", "firebrick"),
                                  labels = c("Control", "Treated")) +
+    ggplot2::scale_fill_manual(values = c("navy", "firebrick"),
+                                labels = c("Control", "Treated"),
+                                guide = "none") +
     ggplot2::labs(
       x = "Follow-up time", y = "Survival probability",
       title = if (!is.null(title)) title else "Kaplan-Meier Curves",
@@ -331,11 +334,13 @@ emulate_plot <- function(obj, type = "cumhaz", ci = TRUE, title = NULL) {
     arm_vals <- rep("All", length(ps_vals))
   }
 
-  plot_df <- data.frame(
-    ps = ps_vals,
-    arm = factor(arm_vals, labels = if (all(arm_vals %in% c(0, 1)))
-      c("Control", "Treated") else unique(arm_vals))
-  )
+  if (all(arm_vals %in% c(0, 1))) {
+    arm_factor <- factor(arm_vals, levels = c(0, 1),
+                         labels = c("Control", "Treated"))
+  } else {
+    arm_factor <- factor(arm_vals)
+  }
+  plot_df <- data.frame(ps = ps_vals, arm = arm_factor)
   plot_df <- plot_df[!is.na(plot_df$ps), ]
 
   p <- ggplot2::ggplot(plot_df, ggplot2::aes(x = ps, color = arm)) +

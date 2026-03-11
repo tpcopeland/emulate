@@ -77,6 +77,7 @@ emulate_stratify <- function(obj, strat_cov, n_strata = 5L,
   outobs_col <- paste0(prefix, "outcome_obs")
 
   if (is.null(cluster)) cluster <- id_col
+  tr_ns_info <- NULL
 
   message("emulate_stratify - Propensity Score Stratification")
   message(strrep("-", 50))
@@ -230,7 +231,7 @@ emulate_stratify <- function(obj, strat_cov, n_strata = 5L,
       cluster = cluster,
       level = level,
       fu_ns_info = NULL,
-      tr_ns_info = if (exists("tr_ns_info")) tr_ns_info else NULL,
+      tr_ns_info = tr_ns_info,
       b_treat = unname(b_treat),
       se_treat = unname(se_treat),
       adjustment_method = "stratification"

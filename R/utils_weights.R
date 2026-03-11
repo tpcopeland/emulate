@@ -32,6 +32,8 @@
       error = function(e) NULL
     )
     if (is.null(lasso_d) || is.null(lasso_d$fit)) {
+      warning("Switch denominator lasso model failed for arm ", arm_val,
+              ". Using constant probabilities.", call. = FALSE)
       dt[has_lag, denom_pr := 0.5]
     } else {
       dt[has_lag, denom_pr := lasso_d$ps]
@@ -43,6 +45,8 @@
       error = function(e) NULL
     )
     if (is.null(denom_fit)) {
+      warning("Switch denominator model failed for arm ", arm_val,
+              ". Using constant probabilities.", call. = FALSE)
       dt[has_lag, denom_pr := 0.5]
     } else {
       dt[has_lag, denom_pr := predict(denom_fit, newdata = dt[has_lag],
@@ -64,6 +68,8 @@
       error = function(e) NULL
     )
     if (is.null(lasso_n) || is.null(lasso_n$fit)) {
+      warning("Switch numerator lasso model failed for arm ", arm_val,
+              ". Using constant probabilities.", call. = FALSE)
       dt[has_lag, numer_pr := 0.5]
     } else {
       dt[has_lag, numer_pr := lasso_n$ps]
@@ -75,6 +81,8 @@
       error = function(e) NULL
     )
     if (is.null(numer_fit)) {
+      warning("Switch numerator model failed for arm ", arm_val,
+              ". Using constant probabilities.", call. = FALSE)
       dt[has_lag, numer_pr := 0.5]
     } else {
       dt[has_lag, numer_pr := predict(numer_fit, newdata = dt[has_lag],
@@ -132,6 +140,8 @@
       error = function(e) NULL
     )
     if (is.null(lasso_d) || is.null(lasso_d$fit)) {
+      warning("Pooled switch denominator lasso model failed. ",
+              "Using constant probabilities.", call. = FALSE)
       dt[has_lag, denom_pr := 0.5]
     } else {
       dt[has_lag, denom_pr := lasso_d$ps]
@@ -143,6 +153,8 @@
       error = function(e) NULL
     )
     if (is.null(denom_fit)) {
+      warning("Pooled switch denominator model failed. ",
+              "Using constant probabilities.", call. = FALSE)
       dt[has_lag, denom_pr := 0.5]
     } else {
       dt[has_lag, denom_pr := predict(denom_fit, newdata = dt[has_lag],
@@ -164,6 +176,8 @@
       error = function(e) NULL
     )
     if (is.null(lasso_n) || is.null(lasso_n$fit)) {
+      warning("Pooled switch numerator lasso model failed. ",
+              "Using constant probabilities.", call. = FALSE)
       dt[has_lag, numer_pr := 0.5]
     } else {
       dt[has_lag, numer_pr := lasso_n$ps]
@@ -175,6 +189,8 @@
       error = function(e) NULL
     )
     if (is.null(numer_fit)) {
+      warning("Pooled switch numerator model failed. ",
+              "Using constant probabilities.", call. = FALSE)
       dt[has_lag, numer_pr := 0.5]
     } else {
       dt[has_lag, numer_pr := predict(numer_fit, newdata = dt[has_lag],

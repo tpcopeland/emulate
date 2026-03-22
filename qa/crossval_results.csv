@@ -1,0 +1,16 @@
+"dataset","config","metric","emulate","trialemul","true_value","em_true_diff","te_true_diff","em_te_diff"
+"known_dgp","ITT","Coef",-0.42938,-0.375622,-0.5,0.07062,0.124378,0.053759
+"known_dgp","ITT","SE",0.044206,0.036771,NA,NA,NA,0.007435
+"known_dgp","ITT","RD(t=5)",-0.12226,-0.045447,NA,NA,NA,0.076813
+"known_dgp","PP","Coef",-0.57538,-0.533521,-0.5,0.07538,0.033521,0.041859
+"known_dgp","PP","SE",0.055457,0.050273,NA,NA,NA,0.005184
+"gformula","ITT","Coef",-0.892488,-0.749288,-0.8,0.092488,0.050712,0.143201
+"gformula","ITT","SE",0.06308,0.049816,NA,NA,NA,0.013265
+"gformula","ITT","RD(t=8)",-0.255969,-0.105262,NA,NA,NA,0.150706
+"gformula","PP","Coef",-0.630248,-1.162423,-0.8,0.169752,0.362423,0.532175
+"gformula","PP","SE",0.085953,0.072709,NA,NA,NA,0.013244
+"ipcw_dgp","PP-naive","Coef",-0.661101,-0.673571,-0.6,0.061101,0.073571,0.012469
+"ipcw_dgp","PP-naive","SE",0.082231,0.074697,NA,NA,NA,0.007534
+"ipcw_dgp","PP-IPCW","Coef",-0.509936,-0.740197,-0.6,0.090064,0.140197,0.230262
+"ipcw_dgp","PP-IPCW","SE",0.183509,0.106887,NA,NA,NA,0.076623
+"ipcw_dgp","PP-IPCW","RD(t=5)",-0.146111,-0.094756,NA,NA,NA,0.051355

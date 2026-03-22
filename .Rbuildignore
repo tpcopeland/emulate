@@ -1,0 +1,8 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^LICENSE\.md$
+^emulate\.Rcheck$
+^emulate.*\.tar\.gz$
+^demo$
+^VALIDATION_REPORT\.md$
+^qa$

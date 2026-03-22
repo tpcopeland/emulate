@@ -1,0 +1,37 @@
+Package: emulate
+Title: Target Trial Emulation via Sequential Trials
+Version: 0.3.0
+Date: 2026-03-20
+Authors@R: person("Timothy P", "Copeland", role = c("aut", "cre"),
+                   email = "timothy.copeland@ki.se")
+Author: Timothy P Copeland [aut, cre]
+Maintainer: Timothy P Copeland <timothy.copeland@ki.se>
+Description: Implements the sequential trials framework (Hernan & Robins 2016)
+    for target trial emulation from observational data. Provides a pipeline for
+    data preparation, validation, clone-censor-weight expansion, inverse
+    probability weighting, pooled logistic regression / Cox PH fitting,
+    G-formula marginal predictions with Monte Carlo confidence intervals,
+    weight diagnostics, and publication-quality output. Produces numerically
+    equivalent results to the Stata 'emulate' package.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+Imports:
+    data.table,
+    survival,
+    sandwich,
+    MASS,
+    ggplot2,
+    glmnet,
+    MatchIt,
+    stats,
+    utils
+VignetteBuilder: knitr
+Suggests:
+    testthat (>= 3.0.0),
+    openxlsx,
+    EmpiricalCalibration,
+    knitr,
+    rmarkdown
+Config/testthat/edition: 3
